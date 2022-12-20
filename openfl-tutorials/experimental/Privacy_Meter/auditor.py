@@ -180,7 +180,7 @@ def PopulationAuditor(target_model, datasets, pm_info):
         save_logs=False,
     )
     audit_obj.prepare()
-    print(f"preparing the auditing uses {time.time() - start_time}")
+    print(f"debug:preparing the auditing uses {time.time() - start_time}")
 
     start_time = time.time()
     audit_results = audit_obj.run()
@@ -307,7 +307,7 @@ def ReferenceAuditor(target_model,reference_models,datasets,pm_info):
         save_logs=False
     )
     audit_obj.prepare() 
-    print(f"preparing the auditing uses {time.time()-start_time}")
+    print(f"debug:preparing the auditing uses {time.time()-start_time}")
     
     start_time = time.time()
     audit_results = audit_obj.run()
