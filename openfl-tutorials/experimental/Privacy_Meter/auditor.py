@@ -266,7 +266,7 @@ def ReferenceAuditor(target_model,reference_models,datasets,pm_info):
         datasets=[target_dataset]
     ) 
 
-    print('debug:prepare for the dataset {}'.format(time.time()- begin_time))
+    print(f"debug:prepare for the dataset {time.time()- begin_time}")
 
     start_time = time.time()
     metrics = []
@@ -295,7 +295,7 @@ def ReferenceAuditor(target_model,reference_models,datasets,pm_info):
         else:
             raise ValueError(f"The provided signal {signal} is not supported.")
             
-    print('debug:construct the metrics uses {}'.format(time.time()- start_time))
+    print(f"debug:construct the metrics uses {time.time()- start_time}")
 
     start_time = time.time()
     audit_obj = Audit(
@@ -307,11 +307,11 @@ def ReferenceAuditor(target_model,reference_models,datasets,pm_info):
         save_logs=False
     )
     audit_obj.prepare() 
-    print('preparing the auditing uses {}'.format(time.time()-start_time))
+    print(f"preparing the auditing uses {time.time()-start_time}")
     
     start_time = time.time()
     audit_results = audit_obj.run()
-    print('debug:running the auditing uses {}'.format(time.time()-start_time))
+    print(f"debug:running the auditing uses {time.time()-start_time}")
 
 
     start_time = time.time()
@@ -348,7 +348,7 @@ def ReferenceAuditor(target_model,reference_models,datasets,pm_info):
     pm_info.update_history('roc', roc_list)
 
 
-    print('debug:saving the information uses {}'.format(time.time()-start_time))
+    print(f"debug:saving the information uses {time.time()-start_time}")
     return pm_info
 
 
