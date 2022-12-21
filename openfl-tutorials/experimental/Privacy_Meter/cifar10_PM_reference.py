@@ -804,7 +804,8 @@ if __name__ == '__main__':
         }
 
     # To activate the ray backend with parallel collaborator tasks run in their own process
-    # and exclusive GPUs assigned to tasks, set LocalRuntime with backend='ray':
+    # and exclusive GPUs assigned to tasks, set LocalRuntime with backend='ray': 
+    # get OOM error at round 29 for ray backend.
     local_runtime = LocalRuntime(aggregator=aggregator, collaborators=collaborators)
 
     print(f'Local runtime collaborators = {local_runtime.collaborators}')
